@@ -1,0 +1,28 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% if error is defined %}
+                {% for key, status in error if status == true %}
+                    <div class="alert alert-danger alert-dismissible fade show col-12" role="alert">
+                        Erreur dans la requête {{ key }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="row">
+            <form action="{{ path_for('index') }}" method="post" class="form-signin">
+                <h1 class="h3 mb-3 font-weight-normal">OVH Migration Tools</h1>
+                <label class="sr-only" for="service">Nom du Service</label>
+                <input type="text" name="service" placeholder="Service" required class="form-control first">
+                <label class="sr-only" for="nic">NIC Handle</label>
+                <input type="text" name="nic" placeholder="NIC" required class="form-control last">
+                <button type="submit" value="envoyer" class="btn btn-lg btn-primary btn-block">Envoyer</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

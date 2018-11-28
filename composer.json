@@ -1,0 +1,20 @@
+{
+    "name": "johan/ovh-migration",
+    "authors": [
+        {
+            "name": "johan",
+            "email": "johan.pesquer@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {
+        "slim/slim": "^3.11",
+        "slim/twig-view": "^2.4",
+        "ovh/ovh": "^2.0",
+        "vlucas/phpdotenv": "^2.5"
+    }
+}

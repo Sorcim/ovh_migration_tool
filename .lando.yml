@@ -1,0 +1,14 @@
+name: ovh
+recipe: lemp
+config:
+  webroot: ./public
+services:
+  appserver:
+    config:
+      server: nginx.conf
+    xdebug: true
+  mailhog:
+    type: mailhog
+    hogfrom:
+    - appserver
+    portforward: 2323
